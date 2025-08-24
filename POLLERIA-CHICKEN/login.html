@@ -3,54 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Luren Chicken</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Iniciar Sesión - Luren Chicken</title>
+    <link rel="stylesheet" href="styles-login.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto:wght@400;700&display=swap">
 </head>
 <body>
-    <a href="https://wa.me/51945819908?text=Hola,%20me%20gustaría%20hacer%20un%20pedido." target="_blank" class="whatsapp-button">
-        <img src="whatsapp.webp" alt="WhatsApp" width="60" height="60">
+    <a href="https://wa.me/51945819908?text=Hola,%20me%20gustaría%20hacer%20un%20pedido." target="_blank" class="whatsapp-button" aria-label="Contactar por WhatsApp">
+        <img src="whatsapp.webp" alt="Icono de WhatsApp" width="60" height="60">
     </a>
 
-    <header>
-        <div class="container">
-            <img src="DLuren.jpg" alt="Logo de Luren Chicken" class="logo">
-            <nav>
+    <header class="main-header">
+        <div class="header-content container">
+            <div class="header-brand">
+                <a href="index.html">
+                    <img src="DLuren.jpg" alt="Logo de Luren Chicken" class="logo">
+                </a>
+                <div class="brand-text">
+                    <h1>Luren Chicken</h1>
+                    <p>Los mejores pollos y cremas. Un sabor único.</p>
+                </div>
+            </div>
+
+            <nav class="main-nav">
                 <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="menu.html">Menú</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
-                    <li><a href="login.html">Login</a></li>
-                    <li><a href="carrito.html">Carrito</a></li>
+                    <li>
+                        <a href="menu.html">
+                            <i class="fas fa-utensils"></i>
+                            <span>Menú</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-tags"></i>
+                            <span>Promos</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="contacto.html">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Locales</span>
+                        </a>
+                    </li>
                 </ul>
             </nav>
+
+            <div class="header-actions">
+                <a href="tel:+51945819908" class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>Llámanos</span>
+                </a>
+                <a href="login.html" class="user-action active">
+                    <i class="fas fa-user"></i>
+                    <span>Iniciar sesión</span>
+                </a>
+                <a href="carrito.html" class="cart-button">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="cart-total">S/ 0.00</span>
+                </a>
+            </div>
         </div>
     </header>
 
-    <main class="container">
-        <section>
-            <h2>Iniciar sesión</h2>
-            <p>Accede a tu cuenta para guardar tus pedidos favoritos y comprar más rápido.</p>
+    <div class="location-bar">
+        <div class="container">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Confirma tu dirección para ver si hay delivery</span>
+        </div>
+    </div>
+    
+    <main class="main-content login-page">
+        <div class="container login-container">
+            <h2>Iniciar Sesión</h2>
+            <p class="login-intro-text">Accede a tu cuenta para guardar tus pedidos y comprar más rápido.</p>
 
-            <form action="#" method="post">
-                <div>
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
+            <form action="#" method="post" class="login-form">
+                <div class="form-group">
+                    <label for="email">
+                        <i class="fas fa-envelope"></i> Email
+                    </label>
+                    <input type="email" id="email" name="email" required placeholder="Tu correo electrónico">
                 </div>
-                <div>
-                    <label for="password">Contraseña:</label>
-                    <input type="password" id="password" name="password" required>
+                <div class="form-group">
+                    <label for="password">
+                        <i class="fas fa-lock"></i> Contraseña
+                    </label>
+                    <input type="password" id="password" name="password" required placeholder="Tu contraseña">
                 </div>
-                <button type="submit" class="btn">Entrar</button>
+                <button type="submit" class="btn btn-primary login-btn">Entrar</button>
             </form>
             
-            <p>¿Olvidaste tu contraseña? <a href="#">Recupérala aquí</a></p>
-            <p>¿No tienes una cuenta? <a href="#">Regístrate</a></p>
-        </section>
+            <div class="login-links">
+                <a href="#" class="link-secondary">¿Olvidaste tu contraseña?</a>
+                <span>|</span>
+                <a href="#" class="link-secondary">¿No tienes una cuenta? Regístrate</a>
+            </div>
+        </div>
     </main>
 
-    <footer>
-        <p>Derechos de autor © 2025 Luren Chicken. Todos los derechos reservados.</p>
+    <footer class="main-footer">
+        <div class="footer-container container">
+            <div class="footer-info-col">
+                <h4>Información de Contacto</h4>
+                <p><i class="fa-solid fa-location-dot"></i> CALLE JUNIN N 617 - ICA</p>
+                <p><i class="fa-solid fa-phone"></i> 945 819 908 | 056 508664</p>
+                <p><i class="fa-solid fa-envelope"></i> contactoluren@gmail.com</p>
+            </div>
+            <div class="footer-social-col">
+                <h4>Síguenos</h4>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-legal">
+                <h4>Información Legal</h4>
+                <ul>
+                    <li><a href="#">Términos y Condiciones</a></li>
+                    <li><a href="#">Política de Privacidad</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright-bar">
+            <div class="container">
+                <p>Derechos de autor © 2025 Luren Chicken. Todos los derechos reservados.</p>
+            </div>
+        </div>
     </footer>
-
+    <script src="login.js"></script>
 </body>
 </html>

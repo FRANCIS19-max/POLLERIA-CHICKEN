@@ -1,195 +1,438 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menú - Luren Chicken</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles-menu.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto:wght@400;700&display=swap">
 </head>
-
 <body>
-    <a href="https://wa.me/51945819908?text=Hola,%20me%20gustaría%20hacer%20un%20pedido." target="_blank" style="position:fixed; bottom:20px; right:20px; z-index:999;">
-    <img src="whatsapp.webp" alt="WhatsApp" width="60" height="60">
-</a>
-    <header>
-        <img src="DLuren.jpg" alt="Logo de Luren Chicken" class="logo">
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="menu.html">Menú</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="carrito.html">Carrito</a></li>
-            </ul>
-        </nav>
+    <a href="https://wa.me/51945819908?text=Hola,%20me%20gustaría%20hacer%20un%20pedido." target="_blank" class="whatsapp-button" aria-label="Contactar por WhatsApp">
+        <img src="whatsapp.webp" alt="Icono de WhatsApp" width="60" height="60">
+    </a>
+
+    <header class="main-header">
+        <div class="header-content container">
+            <div class="header-brand">
+                <a href="index.html">
+                    <img src="DLuren.jpg" alt="Logo de Luren Chicken" class="logo">
+                </a>
+                <div class="brand-text">
+                    <h1>Luren Chicken</h1>
+                    <p>Los mejores pollos y cremas. Un sabor único.</p>
+                </div>
+            </div>
+
+            <nav class="main-nav">
+                <ul>
+                    <li>
+                        <a href="menu.html">
+                            <i class="fas fa-utensils"></i>
+                            <span>Menú</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-tags"></i>
+                            <span>Promos</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="contacto.html">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Locales</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <a href="tel:+51945819908" class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>Llámanos</span>
+                </a>
+                <a href="login.html" class="user-action">
+                    <i class="fas fa-user"></i>
+                    <span>Iniciar sesión</span>
+                </a>
+                <a href="carrito.html" class="cart-button">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="cart-total">S/ 0.00</span>
+                </a>
+            </div>
+        </div>
     </header>
 
-    <main>
-        <section>
-            <h2>Pollos a la Brasa</h2>
-            <ul>
-                <li>
-                    <h3>1 Pollo a la Brasa</h3>
-                    <p>Papas - Ensalada - Cremas</p>
-                    <p>S/ 65.00 <button onclick="agregarAlCarrito('1 Pollo a la Brasa', 65.00)">Agregar al carrito</button></p>
-                </li>
-                <li>
-                    <h3>1/2 Pollo a la Brasa</h3>
-                    <p>Papas - Ensalada - Cremas</p>
-                    <p>S/ 35.00 <button onclick="agregarAlCarrito('1/2 Pollo a la Brasa', 35.00)">Agregar al carrito</button></p>
-                </li>
-                <li>
-                    <h3>1/4 de Pollo a la Brasa</h3>
-                    <p>Papas - Ensalada - Cremas</p>
-                    <p>S/ 18.00 <button onclick="agregarAlCarrito('1/4 Pollo a la Brasa', 18.00)">Agregar al carrito</button></p>
-                </li>
-            </ul>
-        </section>
+    <div class="location-bar">
+        <div class="container">
+            <i class="fas fa-map-marker-alt"></i>
+            <a href="#">Confirma tu dirección para ver si hay delivery</a>
+        </div>
+    </div>
 
-        <section>
-            <h2>Combos</h2>
-            <ul>
-                <li>
-                    <h3>Combo 01 "El Clásico No Falta"</h3>
-                    <p>1. 1/2 Pollo</p>
-                    <p>1. Porción de Papas Familiar</p>
-                    <p>1. Ensalada de Casa</p>
-                    <p>1. Gaseosa Inca Kola 1.5 Lt.</p>
-                    <p>S/ 95.00 <button onclick="agregarAlCarrito('Combo 01 El Clásico No Falta', 95.00)">Agregar al carrito</button></p>
-                </li>
-                <li>
-                    <h3>Combo 02 "Criollo de Corazón"</h3>
-                    <p>1 1/4 Pollo</p>
-                    <p>1. Porción de Papas Familiar</p>
-                    <p>1. Ensalada de Casa</p>
-                    <p>Porción de Arroz Chaufa</p>
-                    <p>S/ 76.00 <button onclick="agregarAlCarrito('Combo 02 Criollo de Corazón', 76.00)">Agregar al carrito</button></p>
-                </li>
-            </ul>
-        </section>
+    <main class="main-content">
+        <div class="container">
+            <section class="promo-section">
+                <img src="Pollo-a-la -Brasa-Papas-Gaseosa-ensalada.jpg" alt="Promoción destacada del día" class="promo-image">
+                <div class="promo-info">
+                    <h2>¡Promoción Especial!</h2>
+                    <p>Aprovecha nuestro Combo Familiar: 1 Pollo a la Brasa + Papas + Gaseosa por solo S/ 89.90</p>
+                    <a href="#combos" class="btn btn-primary">¡Ordenar ahora!</a>
+                </div>
+            </section>
 
-        <section>
-            <h2>Hamburguesas</h2>
-            <ul>
-                <li>
-                    Hamburguesa Carne - S/ 5.00
-                    <button onclick="agregarAlCarrito('Hamburguesa Carne', 5.00)">Agregar al carrito</button>
-                </li>
-                <li>
-                    Hamburguesa Milanesa - S/ 5.00
-                    <button onclick="agregarAlCarrito('Hamburguesa Milanesa', 5.00)">Agregar al carrito</button>
-                </li>
-                <li>
-                    Hamburguesa Especial (Chorizo, Carne, Huevo y Queso) - S/ 10.00
-                    <button onclick="agregarAlCarrito('Hamburguesa Especial', 10.00)">Agregar al carrito</button>
-                </li>
-                <li>
-                    Hamburguesa Chorizo - S/ 5.00
-                    <button onclick="agregarAlCarrito('Hamburguesa Chorizo', 5.00)">Agregar al carrito</button>
-                </li>
-                <li>
-                    Hamburguesa Hotdog + Huevo - S/ 5.00
-                    <button onclick="agregarAlCarrito('Hamburguesa Hotdog + Huevo', 5.00)">Agregar al carrito</button>
-                </li>
-                <li>
-                    Hamburguesa de Pollo - S/ 6.00
-                    <button onclick="agregarAlCarrito('Hamburguesa de Pollo', 6.00)">Agregar al carrito</button>
-                </li>
-            </ul>
-        </section>
+            <section id="menu-section" class="menu-section-grid">
+                <h2>Nuestro Menú Completo</h2>
+                
+                <div class="menu-category">
+                    <div class="category-header">
+                        <img src="pollo-a-la-brasa.webp" alt="Imagen de Pollos a la Brasa">
+                        <h3>Pollos a la Brasa</h3>
+                    </div>
+                    <ul class="item-list">
+                        <li class="menu-item-card" data-id="pollo_brasa_1" data-name="1 Pollo a la Brasa" data-price="65.00" data-image="pollo-a-la-brasa.webp">
+                            <div class="item-details">
+                                <h4>1 Pollo a la Brasa</h4>
+                                <p>Papas - Ensalada - Cremas</p>
+                            </div>
+                            <div class="item-action">
+                                <span class="price">S/ 65.00</span>
+                                <button class="add-to-cart-btn">Agregar</button>
+                            </div>
+                        </li>
+                        <li class="menu-item-card" data-id="pollo_brasa_2" data-name="1/2 Pollo a la Brasa" data-price="35.00" data-image="pollo-a-la-brasa.webp">
+                            <div class="item-details">
+                                <h4>1/2 Pollo a la Brasa</h4>
+                                <p>Papas - Ensalada - Cremas</p>
+                            </div>
+                            <div class="item-action">
+                                <span class="price">S/ 35.00</span>
+                                <button class="add-to-cart-btn">Agregar</button>
+                            </div>
+                        </li>
+                        <li class="menu-item-card" data-id="pollo_brasa_3" data-name="1/4 de Pollo a la Brasa" data-price="18.00" data-image="pollo-a-la-brasa.webp">
+                            <div class="item-details">
+                                <h4>1/4 de Pollo a la Brasa</h4>
+                                <p>Papas - Ensalada - Cremas</p>
+                            </div>
+                            <div class="item-action">
+                                <span class="price">S/ 18.00</span>
+                                <button class="add-to-cart-btn">Agregar</button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
 
-        <section>
-            <h2>Criollos</h2>
-            <ul>
-                <li>
-                    Lomo Saltado de Pollo - S/ 15.00
-                    <button onclick="agregarAlCarrito('Lomo Saltado de Pollo', 15.00)">Agregar al carrito</button>
-                </li>
-                <li>
-                    Tallarín Saltado de Pollo - S/ 15.00
-                    <button onclick="agregarAlCarrito('Tallarín Saltado de Pollo', 15.00)">Agregar al carrito</button>
-                </li>
-                <li>
-                    Chaufa de Pollo - S/ 12.00
-                    <button onclick="agregarAlCarrito('Chaufa de Pollo', 12.00)">Agregar al carrito</button>
-                </li>
-                <li>
-                    Caldo de Gallina - S/ 13.00
-                    <button onclick="agregarAlCarrito('Caldo de Gallina', 13.00)">Agregar al carrito</button>
-                </li>
-            </ul>
-        </section>
+                <div class="menu-category" id="combos">
+                    <div class="category-header">
+                        <img src="Medio Pollo a la Brasa.png" alt="Imagen de Combos">
+                        <h3>Combos</h3>
+                    </div>
+                    <ul class="item-list">
+                        <li class="menu-item-card" data-id="combo_1" data-name="Combo 01 'El Clásico No Falta'" data-price="95.00" data-image="Medio Pollo a la Brasa.png">
+                            <div class="item-details">
+                                <h4>Combo 01 "El Clásico No Falta"</h4>
+                                <p>1 1/2 Pollo, Papas Familiar, Ensalada de Casa, Gaseosa Inca Kola 1.5 Lt.</p>
+                            </div>
+                            <div class="item-action">
+                                <span class="price">S/ 95.00</span>
+                                <button class="add-to-cart-btn">Agregar</button>
+                            </div>
+                        </li>
+                        <li class="menu-item-card" data-id="combo_2" data-name="Combo 02 'Criollo de Corazón'" data-price="76.00" data-image="Medio Pollo a la Brasa.png">
+                            <div class="item-details">
+                                <h4>Combo 02 "Criollo de Corazón"</h4>
+                                <p>1 1/4 Pollo, Papas Familiar, Ensalada de Casa, Porción de Arroz Chaufa.</p>
+                            </div>
+                            <div class="item-action">
+                                <span class="price">S/ 76.00</span>
+                                <button class="add-to-cart-btn">Agregar</button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
 
-        <section>
-            <h2>Parrillas</h2>
-            <ul>
-                <li>
-                    <h3>Parrilla C/ Papa</h3>
-                    <p>Papas - Ensalada - Cremas</p>
-                    <p>S/ 15.50 <button onclick="agregarAlCarrito('Parrilla C/ Papa', 15.50)">Agregar al carrito</button></p>
-                </li>
-                <li>
-                    <h3>Parrilla C/ Arroz Blanco</h3>
-                    <p>Papas - Ensalada - Cremas</p>
-                    <p>S/ 16.50 <button onclick="agregarAlCarrito('Parrilla C/ Arroz Blanco', 16.50)">Agregar al carrito</button></p>
-                </li>
-                <li>
-                    <h3>Parrilla C/ Arroz Chaufa</h3>
-                    <p>Papas - Ensalada - Cremas</p>
-                    <p>S/ 16.50 <button onclick="agregarAlCarrito('Parrilla C/ Arroz Chaufa', 16.50)">Agregar al carrito</button></p>
-                </li>
-            </ul>
-        </section>
+                <div class="menu-category">
+                    <div class="category-header">
+                        <img src="Hamburguesa Carne.png" alt="Imagen de Hamburguesas">
+                        <h3>Hamburguesas</h3>
+                    </div>
+                    <ul class="item-list">
+                        <li class="menu-item-card" data-id="hamburguesa_1" data-name="Hamburguesa Carne" data-price="5.00" data-image="Hamburguesa Carne.png">
+                            <div class="item-details">
+                                <h4>Hamburguesa Carne</h4>
+                                <p>Jugosa hamburguesa de carne.</p>
+                            </div>
+                            <div class="item-action">
+                                <span class="price">S/ 5.00</span>
+                                <button class="add-to-cart-btn">Agregar</button>
+                            </div>
+                        </li>
+                        <li class="menu-item-card" data-id="hamburguesa_2" data-name="Hamburguesa Milanesa" data-price="5.00" data-image="Hamburguesa Carne.png">
+                            <div class="item-details">
+                                <h4>Hamburguesa Milanesa</h4>
+                                <p>Hamburguesa con filete de milanesa de pollo.</p>
+                            </div>
+                            <div class="item-action">
+                                <span class="price">S/ 5.00</span>
+                                <button class="add-to-cart-btn">Agregar</button>
+                            </div>
+                        </li>
+                        <li class="menu-item-card" data-id="hamburguesa_3" data-name="Hamburguesa Especial" data-price="10.00" data-image="Hamburguesa Carne.png">
+                            <div class="item-details">
+                                <h4>Hamburguesa Especial</h4>
+                                <p>Con huevo frito y queso.</p>
+                            </div>
+                            <div class="item-action">
+                                <span class="price">S/ 10.00</span>
+                                <button class="add-to-cart-btn">Agregar</button>
+                            </div>
+                        </li>
+                        <li class="menu-item-card" data-id="hamburguesa_4" data-name="Hamburguesa Chorizo" data-price="5.00" data-image="Hamburguesa Carne.png">
+                            <div class="item-details">
+                                <h4>Hamburguesa Chorizo</h4>
+                                <p>Una deliciosa combinación de hamburguesa y chorizo.</p>
+                            </div>
+                            <div class="item-action">
+                                <span class="price">S/ 5.00</span>
+                                <button class="add-to-cart-btn">Agregar</button>
+                            </div>
+                        </li>
+                        <li class="menu-item-card" data-id="hamburguesa_5" data-name="Hamburguesa Hotdog + Huevo" data-price="5.00" data-image="Hamburguesa Carne.png">
+                            <div class="item-details">
+                                <h4>Hamburguesa Hotdog + Huevo</h4>
+                                <p>La mezcla perfecta de hotdog, huevo y la clásica hamburguesa.</p>
+                            </div>
+                            <div class="item-action">
+                                <span class="price">S/ 5.00</span>
+                                <button class="add-to-cart-btn">Agregar</button>
+                            </div>
+                        </li>
+                        <li class="menu-item-card" data-id="hamburguesa_6" data-name="Hamburguesa de Pollo" data-price="6.00" data-image="Hamburguesa Carne.png">
+                            <div class="item-details">
+                                <h4>Hamburguesa de Pollo</h4>
+                                <p>Deliciosa hamburguesa de pollo.</p>
+                            </div>
+                            <div class="item-action">
+                                <span class="price">S/ 6.00</span>
+                                <button class="add-to-cart-btn">Agregar</button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
 
-        <section>
-            <h2>Chicharrón</h2>
-            <ul>
-                <li>
-                    <h3>Chicharrón 1 Porción</h3>
-                    <p>Papas - Ensalada - Cremas</p>
-                    <p>S/ 45.00 <button onclick="agregarAlCarrito('Chicharrón 1 Porción', 45.00)">Agregar al carrito</button></p>
-                </li>
-                <li>
-                    <h3>1/2 Porción de Chicharrón</h3>
-                    <p>Papas - Ensalada - Cremas</p>
-                    <p>S/ 25.00 <button onclick="agregarAlCarrito('1/2 Porción de Chicharrón', 25.00)">Agregar al carrito</button></p>
-                </li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>Broaster</h2>
-            <ul>
-                <li>
-                    Broaster C/ Chaufa - S/ 15.00
-                    <button onclick="agregarAlCarrito('Broaster C/ Chaufa', 15.00)">Agregar al carrito</button>
-                </li>
-                <li>
-                    Chaufa C/ Encuentro - S/ 12.00
-                    <button onclick="agregarAlCarrito('Chaufa C/ Encuentro', 12.00)">Agregar al carrito</button>
-                </li>
-                <li>
-                    Chaufa C/ Alita - S/ 12.00
-                    <button onclick="agregarAlCarrito('Chaufa C/ Alita', 12.00)">Agregar al carrito</button>
-                </li>
-                <li>
-                    Chaufa C/ Papa + Pierna - S/ 12.00
-                    <button onclick="agregarAlCarrito('Chaufa C/ Papa + Pierna', 12.00)">Agregar al carrito</button>
-                </li>
-                <li>
-                    Chaufa C/ Tortilla - S/ 15.00
-                    <button onclick="agregarAlCarrito('Chaufa C/ Tortilla', 15.00)">Agregar al carrito</button>
-                </li>
-            </ul>
-        </section>
-
+                <div class="menu-category">
+                    <div class="category-header">
+                        <img src="Lomo-Saltado.jpg" alt="Imagen de Comida Criolla">
+                        <h3>Criollos</h3>
+                    </div>
+                    <ul class="item-list">
+                        <li class="menu-item-card" data-id="criollo_1" data-name="Lomo Saltado de Pollo" data-price="15.00" data-image="Lomo-Saltado.jpg">
+                            <div class="item-details">
+                                <h4>Lomo Saltado de Pollo</h4>
+                                <p>El clásico plato peruano con trozos de pollo salteados.</p>
+                            </div>
+                            <div class="item-action">
+                                <span class="price">S/ 15.00</span>
+                                <button class="add-to-cart-btn">Agregar</button>
+                            </div>
+                        </li>
+                        <li class="menu-item-card" data-id="criollo_2" data-name="Tallarín Saltado de Pollo" data-price="15.00" data-image="Lomo-Saltado.jpg">
+                            <div class="item-details">
+                                <h4>Tallarín Saltado de Pollo</h4>
+                                <p>Sabrosos fideos salteados con pollo y salsa de soya.</p>
+                            </div>
+                            <div class="item-action">
+                                <span class="price">S/ 15.00</span>
+                                <button class="add-to-cart-btn">Agregar</button>
+                            </div>
+                        </li>
+                        <li class="menu-item-card" data-id="criollo_3" data-name="Chaufa de Pollo" data-price="12.00" data-image="Lomo-Saltado.jpg">
+                            <div class="item-details">
+                                <h4>Chaufa de Pollo</h4>
+                                <p>El arroz frito peruano con trozos de pollo.</p>
+                            </div>
+                            <div class="item-action">
+                                <span class="price">S/ 12.00</span>
+                                <button class="add-to-cart-btn">Agregar</button>
+                            </div>
+                        </li>
+                        <li class="menu-item-card" data-id="criollo_4" data-name="Caldo de Gallina" data-price="13.00" data-image="Lomo-Saltado.jpg">
+                            <div class="item-details">
+                                <h4>Caldo de Gallina</h4>
+                                <p>Reconfortante y nutritivo caldo de gallina.</p>
+                            </div>
+                            <div class="item-action">
+                                <span class="price">S/ 13.00</span>
+                                <button class="add-to-cart-btn">Agregar</button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="menu-category">
+                    <div class="category-header">
+                        <img src="Parrilla.jpeg" alt="Imagen de Parrillas">
+                        <h3>Parrillas</h3>
+                    </div>
+                    <ul class="item-list">
+                        <li class="menu-item-card" data-id="parrilla_1" data-name="Parrilla con Papa" data-price="15.50" data-image="Parrilla.jpeg">
+                            <div class="item-details">
+                                <h4>Parrilla con Papa</h4>
+                                <p>Deliciosa parrilla de pollo con papas fritas, ensalada y cremas.</p>
+                            </div>
+                            <div class="item-action">
+                                <span class="price">S/ 15.50</span>
+                                <button class="add-to-cart-btn">Agregar</button>
+                            </div>
+                        </li>
+                        <li class="menu-item-card" data-id="parrilla_2" data-name="Parrilla con Arroz Blanco" data-price="16.50" data-image="Parrilla.jpeg">
+                            <div class="item-details">
+                                <h4>Parrilla con Arroz Blanco</h4>
+                                <p>Tierna parrilla de pollo acompañada de arroz blanco y ensalada.</p>
+                            </div>
+                            <div class="item-action">
+                                <span class="price">S/ 16.50</span>
+                                <button class="add-to-cart-btn">Agregar</button>
+                            </div>
+                        </li>
+                        <li class="menu-item-card" data-id="parrilla_3" data-name="Parrilla con Arroz Chaufa" data-price="16.50" data-image="Parrilla.jpeg">
+                            <div class="item-details">
+                                <h4>Parrilla con Arroz Chaufa</h4>
+                                <p>Una combinación irresistible de parrilla de pollo y arroz chaufa.</p>
+                            </div>
+                            <div class="item-action">
+                                <span class="price">S/ 16.50</span>
+                                <button class="add-to-cart-btn">Agregar</button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="menu-category">
+                    <div class="category-header">
+                        <img src="Chicharron-de-Pollo.jpg" alt="Imagen de Chicharrón">
+                        <h3>Chicharrón</h3>
+                    </div>
+                    <ul class="item-list">
+                        <li class="menu-item-card" data-id="chicharron_1" data-name="Chicharrón 1 Porción" data-price="45.00" data-image="Chicharron-de-Pollo.jpg">
+                            <div class="item-details">
+                                <h4>Chicharrón 1 Porción</h4>
+                                <p>Crujiente chicharrón de cerdo, acompañado de papas, ensalada y cremas.</p>
+                            </div>
+                            <div class="item-action">
+                                <span class="price">S/ 45.00</span>
+                                <button class="add-to-cart-btn">Agregar</button>
+                            </div>
+                        </li>
+                        <li class="menu-item-card" data-id="chicharron_2" data-name="1/2 Porción de Chicharrón" data-price="25.00" data-image="Chicharron-de-Pollo.jpg">
+                            <div class="item-details">
+                                <h4>1/2 Porción de Chicharrón</h4>
+                                <p>Media porción de nuestro clásico chicharrón, perfecto para un antojo.</p>
+                            </div>
+                            <div class="item-action">
+                                <span class="price">S/ 25.00</span>
+                                <button class="add-to-cart-btn">Agregar</button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="menu-category">
+                    <div class="category-header">
+                        <img src="Pollo-Broaster.jpg" alt="Imagen de Pollo Broaster">
+                        <h3>Broaster</h3>
+                    </div>
+                    <ul class="item-list">
+                        <li class="menu-item-card" data-id="broaster_1" data-name="Broaster con Chaufa" data-price="15.00" data-image="Pollo-Broaster.jpg">
+                            <div class="item-details">
+                                <h4>Broaster con Chaufa</h4>
+                                <p>Crujiente pollo broaster acompañado de nuestro sabroso arroz chaufa.</p>
+                            </div>
+                            <div class="item-action">
+                                <span class="price">S/ 15.00</span>
+                                <button class="add-to-cart-btn">Agregar</button>
+                            </div>
+                        </li>
+                        <li class="menu-item-card" data-id="broaster_2" data-name="Chaufa con Encuentro" data-price="12.00" data-image="Pollo-Broaster.jpg">
+                            <div class="item-details">
+                                <h4>Chaufa con Encuentro</h4>
+                                <p>Arroz chaufa con una pierna de pollo broaster.</p>
+                            </div>
+                            <div class="item-action">
+                                <span class="price">S/ 12.00</span>
+                                <button class="add-to-cart-btn">Agregar</button>
+                            </div>
+                        </li>
+                        <li class="menu-item-card" data-id="broaster_3" data-name="Chaufa con Alita" data-price="12.00" data-image="Pollo-Broaster.jpg">
+                            <div class="item-details">
+                                <h4>Chaufa con Alita</h4>
+                                <p>Porción de arroz chaufa con una crujiente alita de pollo broaster.</p>
+                            </div>
+                            <div class="item-action">
+                                <span class="price">S/ 12.00</span>
+                                <button class="add-to-cart-btn">Agregar</button>
+                            </div>
+                        </li>
+                        <li class="menu-item-card" data-id="broaster_4" data-name="Chaufa con Papa + Pierna" data-price="12.00" data-image="Pollo-Broaster.jpg">
+                            <div class="item-details">
+                                <h4>Chaufa con Papa + Pierna</h4>
+                                <p>Arroz chaufa con papas fritas y una pierna de pollo broaster.</p>
+                            </div>
+                            <div class="item-action">
+                                <span class="price">S/ 12.00</span>
+                                <button class="add-to-cart-btn">Agregar</button>
+                            </div>
+                        </li>
+                        <li class="menu-item-card" data-id="broaster_5" data-name="Chaufa con Tortilla" data-price="15.00" data-image="Pollo-Broaster.jpg">
+                            <div class="item-details">
+                                <h4>Chaufa con Tortilla</h4>
+                                <p>Arroz chaufa cubierto con una deliciosa tortilla de huevo.</p>
+                            </div>
+                            <div class="item-action">
+                                <span class="price">S/ 15.00</span>
+                                <button class="add-to-cart-btn">Agregar</button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </div>
     </main>
 
-    <footer>
-        <p>Derechos de autor © 2025 Luren Chicken. Todos los derechos reservados.</p>
+    <footer class="main-footer">
+        <div class="footer-container container">
+            <div class="footer-info-col">
+                <h4>Información de Contacto</h4>
+                <p><i class="fa-solid fa-location-dot"></i> CALLE JUNIN N 617 - ICA</p>
+                <p><i class="fa-solid fa-phone"></i> 945 819 908 | 056 508664</p>
+                <p><i class="fa-solid fa-envelope"></i> contactoluren@gmail.com</p>
+            </div>
+            <div class="footer-social-col">
+                <h4>Síguenos</h4>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-legal">
+                <h4>Información Legal</h4>
+                <ul>
+                    <li><a href="#">Términos y Condiciones</a></li>
+                    <li><a href="#">Política de Privacidad</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright-bar">
+            <div class="container">
+                <p>Derechos de autor © 2025 Luren Chicken. Todos los derechos reservados.</p>
+            </div>
+        </div>
     </footer>
 
+    <script src="menu.js"></script>
 </body>
-
 </html>

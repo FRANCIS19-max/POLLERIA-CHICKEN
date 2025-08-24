@@ -4,66 +4,162 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto - Luren Chicken</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles-contacto.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto:wght@400;700&display=swap">
 </head>
 <body>
-    <a href="https://wa.me/51945819908?text=Hola,%20me%20gustaría%20hacer%20un%20pedido." target="_blank" class="whatsapp-button">
-        <img src="whatsapp.webp" alt="WhatsApp" width="60" height="60">
+    <a href="https://wa.me/51945819908?text=Hola,%20me%20gustaría%20hacer%20un%20pedido." target="_blank" class="whatsapp-button" aria-label="Contactar por WhatsApp">
+        <img src="whatsapp.webp" alt="Icono de WhatsApp" width="60" height="60">
     </a>
-    
-    <header>
-        <div class="container">
-            <img src="DLuren.jpg" alt="Logo de Luren Chicken" class="logo">
-            <nav>
+
+    <header class="main-header">
+        <div class="header-content container">
+            <div class="header-brand">
+                <a href="index.html">
+                    <img src="DLuren.jpg" alt="Logo de Luren Chicken" class="logo">
+                </a>
+                <div class="brand-text">
+                    <h1>Luren Chicken</h1>
+                    <p>Los mejores pollos y cremas. Un sabor único.</p>
+                </div>
+            </div>
+
+            <nav class="main-nav">
                 <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="menu.html">Menú</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
-                    <li><a href="login.html">Login</a></li>
-                    <li><a href="carrito.html">Carrito</a></li>
+                    <li>
+                        <a href="menu.html">
+                            <i class="fas fa-utensils"></i>
+                            <span>Menú</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-tags"></i>
+                            <span>Promos</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="contacto.html">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Locales</span>
+                        </a>
+                    </li>
                 </ul>
             </nav>
+
+            <div class="header-actions">
+                <a href="tel:+51945819908" class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>Llámanos</span>
+                </a>
+                <a href="login.html" class="user-action">
+                    <i class="fas fa-user"></i>
+                    <span>Iniciar sesión</span>
+                </a>
+                <a href="carrito.html" class="cart-button">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="cart-total">S/ 0.00</span>
+                </a>
+            </div>
         </div>
     </header>
 
-    <main class="container">
-        <section>
+    <div class="location-bar">
+        <div class="container">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Confirma tu dirección para ver si hay delivery</span>
+        </div>
+    </div>
+
+    <main class="main-content">
+        <div class="container contact-container">
             <h2>¡Contáctanos!</h2>
-            <p>Estamos aquí para servirte el mejor pollo a la brasa. ¡Ven a visitarnos o llámanos para hacer tu pedido!</p>
 
-            <h3>Información de contacto</h3>
-            <p><strong>Dirección:</strong> CALLE JUNIN N 617 - ICA</p>
-            <p><strong>Teléfonos de Delivery:</strong> 945 819 908 | 056 508664</p>
-        </section>
+            <div class="contact-info-grid">
+                <div class="contact-card">
+                    <i class="fas fa-phone-alt"></i>
+                    <h3>Llámanos</h3>
+                    <p>
+                        <a href="tel:+51945819908">945 819 908</a><br>
+                        <a href="tel:+51056508664">056 508664</a>
+                    </p>
+                    <p>Estamos listos para atenderte.</p>
+                </div>
+                
+                <div class="contact-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Visítanos</h3>
+                    <p>CALLE JUNIN N 617 - ICA</p>
+                    <p>Encuéntranos en el corazón de Ica.</p>
+                </div>
+                
+                <div class="contact-card">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Escríbenos</h3>
+                    <p>contactoluren@gmail.com</p>
+                    <p>Para consultas y sugerencias.</p>
+                </div>
+            </div>
 
-        <section>
-            <h2>¿Dónde estamos?</h2>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3869.608357871358!2d-75.72778648580199!3d-14.072213892408013!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9110e2e5055b88b7%3A0xc39f9976329c299c!2sLuren%20Chicken!5e0!3m2!1ses!2spe!4v1692809072935!5m2!1ses!2spe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </section>
-
-        <section>
-            <h2>Envíanos un mensaje</h2>
-            <form action="#" method="post">
-                <div>
-                    <label for="nombre">Nombre:</label>
-                    <input type="text" id="nombre" name="nombre" required>
+            <div class="contact-form-and-map">
+                <div class="contact-form">
+                    <h3>Envíanos un mensaje</h3>
+                    <form action="#" method="post">
+                        <div class="form-group">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" id="nombre" name="nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="mensaje">Mensaje</label>
+                            <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+                    </form>
                 </div>
-                <div>
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
+                
+                <div class="map-container">
+                    <h3>¿Dónde estamos?</h3>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3849.204561849909!2d-75.72895248554955!3d-14.075480287814237!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9110e201b1c678a1%3A0xc6c4f0f6c2f9e4a0!2sLuren%20Chicken!5e0!3m2!1ses-419!2spe!4v1628173950669!5m2!1ses-419!2spe" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
-                <div>
-                    <label for="mensaje">Mensaje:</label>
-                    <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
-                </div>
-                <button type="submit" class="btn">Enviar</button>
-            </form>
-        </section>
+            </div>
+        </div>
     </main>
 
-    <footer>
-        <p>Derechos de autor © 2025 Luren Chicken. Todos los derechos reservados.</p>
+    <footer class="main-footer">
+        <div class="footer-container container">
+            <div class="footer-info-col">
+                <h4>Información de Contacto</h4>
+                <p><i class="fa-solid fa-location-dot"></i> CALLE JUNIN N 617 - ICA</p>
+                <p><i class="fa-solid fa-phone"></i> 945 819 908 | 056 508664</p>
+                <p><i class="fa-solid fa-envelope"></i> contactoluren@gmail.com</p>
+            </div>
+            <div class="footer-social-col">
+                <h4>Síguenos</h4>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-legal">
+                <h4>Información Legal</h4>
+                <ul>
+                    <li><a href="#">Términos y Condiciones</a></li>
+                    <li><a href="#">Política de Privacidad</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright-bar">
+            <div class="container">
+                <p>Derechos de autor © 2025 Luren Chicken. Todos los derechos reservados.</p>
+            </div>
+        </div>
     </footer>
 
+    <script src="contacto.js"></script>
 </body>
 </html>

@@ -1,0 +1,415 @@
+/* ==================================== */
+/* 🍔 1. Variables y configuraciones globales */
+/* ==================================== */
+:root {
+    /* Paleta de colores */
+    --color-primary: #FF0000; /* Un rojo vibrante para la marca */
+    --color-secondary: #FFC107; /* Amarillo para acentos */
+    --color-dark: #333333;
+    --color-light: #F8F9FA;
+    --color-white: #FFFFFF;
+    --color-gray: #6C757D;
+
+    /* Tipografía */
+    --font-family-primary: 'Arial', sans-serif;
+    --font-family-secondary: 'Helvetica', sans-serif;
+
+    /* Espaciado */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-xxl: 3rem;
+
+    /* Sombras y bordes */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --border-radius: 8px;
+
+    /* Transiciones */
+    --transition-fast: 0.2s ease-in-out;
+}
+
+/* ==================================== */
+/* 🌐 2. Estilos generales y utilidades */
+/* ==================================== */
+body {
+    font-family: var(--font-family-primary);
+    line-height: 1.6;
+    color: var(--color-dark);
+    margin: 0;
+    background-color: var(--color-light);
+    overflow-x: hidden;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-primary);
+    transition: color var(--transition-fast);
+}
+
+a:hover {
+    color: var(--color-secondary);
+}
+
+h1, h2, h3, h4 {
+    color: var(--color-dark);
+    font-family: var(--font-family-secondary);
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: var(--border-radius);
+    font-weight: bold;
+    text-align: center;
+    transition: transform var(--transition-fast), background-color var(--transition-fast);
+    box-shadow: var(--shadow-sm);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.btn-secondary {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+}
+
+/* ==================================== */
+/* 📱 3. Estilos del encabezado (Header) */
+/* ==================================== */
+.main-header {
+    background-color: var(--color-white);
+    box-shadow: var(--shadow-md);
+    padding: var(--spacing-md) 0;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+}
+
+.header-brand {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.header-brand .logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.header-brand .brand-text h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: var(--color-dark);
+    text-align: left;
+}
+
+.header-brand .brand-text p {
+    margin: 0;
+    font-size: 0.875rem;
+    color: var(--color-gray);
+}
+
+.main-nav ul {
+    display: flex;
+    gap: var(--spacing-xl);
+}
+
+.main-nav a {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    font-weight: bold;
+    color: var(--color-dark);
+}
+
+.main-nav a:hover {
+    color: var(--color-primary);
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.contact-item, .user-action, .cart-button {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    color: var(--color-gray);
+    transition: color var(--transition-fast);
+}
+
+.cart-button {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--border-radius);
+    font-weight: bold;
+    transition: background-color var(--transition-fast);
+}
+
+.cart-button:hover {
+    background-color: var(--color-secondary);
+}
+
+.location-bar {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+    text-align: center;
+    padding: var(--spacing-sm);
+    box-shadow: var(--shadow-sm);
+}
+
+.location-bar a {
+    color: var(--color-white);
+    font-weight: bold;
+    transition: color var(--transition-fast);
+}
+
+.location-bar a:hover {
+    color: var(--color-secondary);
+}
+
+/* ==================================== */
+/* 🍲 4. Estilos de la sección principal (Main) */
+/* ==================================== */
+.main-content {
+    padding: var(--spacing-xxl) 0;
+}
+
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--spacing-lg);
+    background-color: var(--color-white);
+    padding: var(--spacing-xxl) var(--spacing-md);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+}
+
+.hero-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-md);
+    text-align: center;
+}
+
+/* Carrusel de imágenes */
+.carousel-container {
+    width: 100%;
+    max-width: 800px;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+}
+
+.carousel-track {
+    display: flex;
+    width: 300%; /* Ajustar al número de imágenes */
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+    animation: carousel-slide 15s infinite;
+}
+
+.carousel-img {
+    width: 33.33%; /* Ajustar al número de imágenes */
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-section {
+    background-color: var(--color-white);
+    padding: var(--spacing-xxl) var(--spacing-md);
+    text-align: center;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    margin-top: var(--spacing-xxl);
+}
+
+/* ==================================== */
+/* 📱 5. Botón de WhatsApp flotante */
+/* ==================================== */
+.whatsapp-button {
+    position: fixed;
+    bottom: var(--spacing-xxl);
+    right: var(--spacing-xxl);
+    z-index: 1000;
+    animation: pulse 2s infinite;
+    box-shadow: var(--shadow-md);
+    border-radius: 50%;
+}
+
+.whatsapp-button img {
+    border-radius: 50%;
+    transition: transform var(--transition-fast);
+}
+
+.whatsapp-button img:hover {
+    transform: scale(1.1);
+}
+
+/* ==================================== */
+/* 🦶 6. Estilos del pie de página (Footer) */
+/* ==================================== */
+.main-footer {
+    background-color: var(--color-dark);
+    color: var(--color-light);
+    padding: var(--spacing-xxl) 0;
+    margin-top: var(--spacing-xxl);
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: var(--spacing-lg);
+}
+
+.footer-container h4 {
+    color: var(--color-white);
+    text-align: left;
+    margin-bottom: var(--spacing-md);
+}
+
+.footer-info-col, .footer-social-col, .footer-legal {
+    min-width: 200px;
+}
+
+.footer-info-col p {
+    margin-bottom: var(--spacing-sm);
+}
+
+.social-icons a {
+    color: var(--color-white);
+    font-size: 1.5rem;
+    margin-right: var(--spacing-md);
+}
+
+.social-icons a:hover {
+    color: var(--color-secondary);
+}
+
+.footer-legal a {
+    color: var(--color-light);
+    display: block;
+    margin-bottom: var(--spacing-sm);
+}
+
+.copyright-bar {
+    background-color: #222222;
+    text-align: center;
+    padding: var(--spacing-sm);
+    margin-top: var(--spacing-lg);
+}
+
+.copyright-bar p {
+    margin: 0;
+    font-size: 0.875rem;
+}
+
+/* ==================================== */
+/* 📱 7. Estilos responsivos (Media Queries) */
+/* ==================================== */
+@media (max-width: 992px) {
+    .main-nav {
+        width: 100%;
+        text-align: center;
+    }
+    .main-nav ul {
+        justify-content: center;
+        gap: var(--spacing-lg);
+    }
+    .header-actions {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .header-brand {
+        flex-direction: column;
+    }
+    .header-brand .brand-text h1, .header-brand .brand-text p {
+        text-align: center;
+    }
+    .main-nav ul {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    .header-actions {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    .btn {
+        width: 100%;
+    }
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .footer-container h4 {
+        text-align: center;
+    }
+}
+
+/* ==================================== */
+/* 🌟 8. Animaciones */
+/* ==================================== */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes carousel-slide {
+    0%, 25% { transform: translateX(0); }
+    30%, 55% { transform: translateX(-33.33%); }
+    60%, 85% { transform: translateX(-66.66%); }
+    90%, 100% { transform: translateX(0); }
+}

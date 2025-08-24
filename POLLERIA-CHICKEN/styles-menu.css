@@ -1,0 +1,439 @@
+/* Importar fuentes de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto:wght@400;700&display=swap');
+
+/* Estilos Generales y Reset */
+:root {
+    --primary-color: #B22222; /* Rojo oscuro para Pollos a la Brasa */
+    --secondary-color: #FFA500; /* Naranja brillante */
+    --accent-color: #FFD700; /* Dorado para detalles */
+    --text-dark: #333;
+    --text-light: #f4f4f4;
+    --background-light: #f9f9f9;
+    --background-dark: #222;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--background-light);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Oswald', sans-serif;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+h2::after {
+    content: '';
+    width: 80px;
+    height: 4px;
+    background-color: var(--secondary-color);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+ul {
+    list-style: none;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #a01a1a;
+}
+
+/* Encabezado */
+.main-header {
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.header-brand {
+    display: flex;
+    align-items: center;
+}
+
+.header-brand .logo {
+    height: 80px;
+    margin-right: 15px;
+    border-radius: 50%;
+}
+
+.brand-text h1 {
+    font-size: 2rem;
+    margin: 0;
+    color: var(--text-dark);
+}
+
+.brand-text p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.main-nav ul {
+    display: flex;
+}
+
+.main-nav ul li a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 15px;
+    color: var(--primary-color);
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.main-nav ul li a:hover {
+    color: var(--secondary-color);
+}
+
+.main-nav ul li a i {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-dark);
+}
+
+.cart-button {
+    background-color: var(--secondary-color);
+    color: white;
+    border-radius: 50px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.cart-button:hover {
+    background-color: #e59400;
+}
+
+.cart-button i {
+    font-size: 1.2rem;
+}
+
+.location-bar {
+    background-color: var(--background-dark);
+    color: var(--text-light);
+    padding: 10px 0;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.location-bar a {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+/* Pie de página */
+.main-footer {
+    background-color: var(--background-dark);
+    color: var(--text-light);
+    padding: 40px 0 20px;
+    margin-top: 50px;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+}
+
+.footer-info-col h4,
+.footer-social-col h4,
+.footer-legal h4 {
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.footer-info-col p {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.social-icons a {
+    color: var(--text-light);
+    font-size: 1.5rem;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--secondary-color);
+}
+
+.footer-legal ul li a {
+    color: var(--text-light);
+    display: block;
+    padding: 5px 0;
+}
+
+.footer-legal ul li a:hover {
+    color: var(--secondary-color);
+}
+
+.copyright-bar {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Botón flotante de WhatsApp */
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-button:hover {
+    transform: scale(1.1);
+}
+
+.whatsapp-button img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+/* Estilos del Menú */
+.main-content {
+    padding: 50px 0;
+}
+
+.promo-section {
+    position: relative;
+    text-align: center;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.promo-section .promo-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.promo-info {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px 40px;
+    border-radius: 8px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.promo-info h2 {
+    color: white;
+    margin: 0 0 10px;
+    font-size: 2.5rem;
+}
+
+.promo-info p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.menu-section-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.menu-category {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.menu-category:hover {
+    transform: translateY(-5px);
+}
+
+.category-header {
+    position: relative;
+}
+
+.category-header img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.category-header h3 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    color: white;
+    font-size: 1.8rem;
+    padding: 20px 15px 10px;
+    text-align: center;
+    margin: 0;
+}
+
+.item-list {
+    padding: 20px;
+}
+
+.menu-item-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding: 15px 0;
+}
+
+.menu-item-card:last-child {
+    border-bottom: none;
+}
+
+.item-details h4 {
+    font-size: 1.1rem;
+    margin: 0;
+    color: var(--text-dark);
+}
+
+.item-details p {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 5px 0 0;
+}
+
+.item-action {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-shrink: 0;
+}
+
+.item-action .price {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.add-to-cart-btn {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #e59400;
+}
+
+/* Media Queries para responsividad */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .main-nav ul {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .header-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .promo-info h2 {
+        font-size: 2rem;
+    }
+
+    .promo-info p {
+        font-size: 1rem;
+    }
+
+    .menu-section-grid {
+        grid-template-columns: 1fr;
+    }
+}
