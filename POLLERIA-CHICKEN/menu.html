@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú - Luren Chicken</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <a href="https://wa.me/51945819908?text=Hola,%20me%20gustaría%20hacer%20un%20pedido." target="_blank" style="position:fixed; bottom:20px; right:20px; z-index:999;">
+    <img src="whatsapp.webp" alt="WhatsApp" width="60" height="60">
+</a>
+    <header>
+        <img src="DLuren.jpg" alt="Logo de Luren Chicken" class="logo">
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="menu.html">Menú</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="carrito.html">Carrito</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Pollos a la Brasa</h2>
+            <ul>
+                <li>
+                    <h3>1 Pollo a la Brasa</h3>
+                    <p>Papas - Ensalada - Cremas</p>
+                    <p>S/ 65.00 <button onclick="agregarAlCarrito('1 Pollo a la Brasa', 65.00)">Agregar al carrito</button></p>
+                </li>
+                <li>
+                    <h3>1/2 Pollo a la Brasa</h3>
+                    <p>Papas - Ensalada - Cremas</p>
+                    <p>S/ 35.00 <button onclick="agregarAlCarrito('1/2 Pollo a la Brasa', 35.00)">Agregar al carrito</button></p>
+                </li>
+                <li>
+                    <h3>1/4 de Pollo a la Brasa</h3>
+                    <p>Papas - Ensalada - Cremas</p>
+                    <p>S/ 18.00 <button onclick="agregarAlCarrito('1/4 Pollo a la Brasa', 18.00)">Agregar al carrito</button></p>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Combos</h2>
+            <ul>
+                <li>
+                    <h3>Combo 01 "El Clásico No Falta"</h3>
+                    <p>1. 1/2 Pollo</p>
+                    <p>1. Porción de Papas Familiar</p>
+                    <p>1. Ensalada de Casa</p>
+                    <p>1. Gaseosa Inca Kola 1.5 Lt.</p>
+                    <p>S/ 95.00 <button onclick="agregarAlCarrito('Combo 01 El Clásico No Falta', 95.00)">Agregar al carrito</button></p>
+                </li>
+                <li>
+                    <h3>Combo 02 "Criollo de Corazón"</h3>
+                    <p>1 1/4 Pollo</p>
+                    <p>1. Porción de Papas Familiar</p>
+                    <p>1. Ensalada de Casa</p>
+                    <p>Porción de Arroz Chaufa</p>
+                    <p>S/ 76.00 <button onclick="agregarAlCarrito('Combo 02 Criollo de Corazón', 76.00)">Agregar al carrito</button></p>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Hamburguesas</h2>
+            <ul>
+                <li>
+                    Hamburguesa Carne - S/ 5.00
+                    <button onclick="agregarAlCarrito('Hamburguesa Carne', 5.00)">Agregar al carrito</button>
+                </li>
+                <li>
+                    Hamburguesa Milanesa - S/ 5.00
+                    <button onclick="agregarAlCarrito('Hamburguesa Milanesa', 5.00)">Agregar al carrito</button>
+                </li>
+                <li>
+                    Hamburguesa Especial (Chorizo, Carne, Huevo y Queso) - S/ 10.00
+                    <button onclick="agregarAlCarrito('Hamburguesa Especial', 10.00)">Agregar al carrito</button>
+                </li>
+                <li>
+                    Hamburguesa Chorizo - S/ 5.00
+                    <button onclick="agregarAlCarrito('Hamburguesa Chorizo', 5.00)">Agregar al carrito</button>
+                </li>
+                <li>
+                    Hamburguesa Hotdog + Huevo - S/ 5.00
+                    <button onclick="agregarAlCarrito('Hamburguesa Hotdog + Huevo', 5.00)">Agregar al carrito</button>
+                </li>
+                <li>
+                    Hamburguesa de Pollo - S/ 6.00
+                    <button onclick="agregarAlCarrito('Hamburguesa de Pollo', 6.00)">Agregar al carrito</button>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Criollos</h2>
+            <ul>
+                <li>
+                    Lomo Saltado de Pollo - S/ 15.00
+                    <button onclick="agregarAlCarrito('Lomo Saltado de Pollo', 15.00)">Agregar al carrito</button>
+                </li>
+                <li>
+                    Tallarín Saltado de Pollo - S/ 15.00
+                    <button onclick="agregarAlCarrito('Tallarín Saltado de Pollo', 15.00)">Agregar al carrito</button>
+                </li>
+                <li>
+                    Chaufa de Pollo - S/ 12.00
+                    <button onclick="agregarAlCarrito('Chaufa de Pollo', 12.00)">Agregar al carrito</button>
+                </li>
+                <li>
+                    Caldo de Gallina - S/ 13.00
+                    <button onclick="agregarAlCarrito('Caldo de Gallina', 13.00)">Agregar al carrito</button>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Parrillas</h2>
+            <ul>
+                <li>
+                    <h3>Parrilla C/ Papa</h3>
+                    <p>Papas - Ensalada - Cremas</p>
+                    <p>S/ 15.50 <button onclick="agregarAlCarrito('Parrilla C/ Papa', 15.50)">Agregar al carrito</button></p>
+                </li>
+                <li>
+                    <h3>Parrilla C/ Arroz Blanco</h3>
+                    <p>Papas - Ensalada - Cremas</p>
+                    <p>S/ 16.50 <button onclick="agregarAlCarrito('Parrilla C/ Arroz Blanco', 16.50)">Agregar al carrito</button></p>
+                </li>
+                <li>
+                    <h3>Parrilla C/ Arroz Chaufa</h3>
+                    <p>Papas - Ensalada - Cremas</p>
+                    <p>S/ 16.50 <button onclick="agregarAlCarrito('Parrilla C/ Arroz Chaufa', 16.50)">Agregar al carrito</button></p>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Chicharrón</h2>
+            <ul>
+                <li>
+                    <h3>Chicharrón 1 Porción</h3>
+                    <p>Papas - Ensalada - Cremas</p>
+                    <p>S/ 45.00 <button onclick="agregarAlCarrito('Chicharrón 1 Porción', 45.00)">Agregar al carrito</button></p>
+                </li>
+                <li>
+                    <h3>1/2 Porción de Chicharrón</h3>
+                    <p>Papas - Ensalada - Cremas</p>
+                    <p>S/ 25.00 <button onclick="agregarAlCarrito('1/2 Porción de Chicharrón', 25.00)">Agregar al carrito</button></p>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Broaster</h2>
+            <ul>
+                <li>
+                    Broaster C/ Chaufa - S/ 15.00
+                    <button onclick="agregarAlCarrito('Broaster C/ Chaufa', 15.00)">Agregar al carrito</button>
+                </li>
+                <li>
+                    Chaufa C/ Encuentro - S/ 12.00
+                    <button onclick="agregarAlCarrito('Chaufa C/ Encuentro', 12.00)">Agregar al carrito</button>
+                </li>
+                <li>
+                    Chaufa C/ Alita - S/ 12.00
+                    <button onclick="agregarAlCarrito('Chaufa C/ Alita', 12.00)">Agregar al carrito</button>
+                </li>
+                <li>
+                    Chaufa C/ Papa + Pierna - S/ 12.00
+                    <button onclick="agregarAlCarrito('Chaufa C/ Papa + Pierna', 12.00)">Agregar al carrito</button>
+                </li>
+                <li>
+                    Chaufa C/ Tortilla - S/ 15.00
+                    <button onclick="agregarAlCarrito('Chaufa C/ Tortilla', 15.00)">Agregar al carrito</button>
+                </li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Derechos de autor © 2025 Luren Chicken. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+
+</html>
