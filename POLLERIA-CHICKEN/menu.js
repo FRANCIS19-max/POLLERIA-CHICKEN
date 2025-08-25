@@ -1,57 +1,39 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Selecciona todos los botones "Agregar" del menú
     const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
-    const cartTotalElement = document.getElementById('cart-total');
+    const cartTotalSpan = document.getElementById('cart-total');
 
-    // Carga el carrito desde localStorage o inicializa un array vacío
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    function updateCartTotalDisplay(cart) {
+        const total = cart.reduce((acc, item) => acc + (item.price * item.quantity), 0);
+        cartTotalSpan.textContent = `S/ ${total.toFixed(2)}`;
+    }
 
-    // Función para actualizar el total en el encabezado
-    const updateCartTotal = () => {
-        const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-        cartTotalElement.textContent = `S/ ${total.toFixed(2)}`;
-    };
+    // Inicializar el total del carrito al cargar la página
+    const currentCart = JSON.parse(localStorage.getItem('cart')) || [];
+    updateCartTotalDisplay(currentCart);
 
-    // Llama a la función al cargar la página para mostrar el total inicial
-    updateCartTotal();
-
-    // Recorre todos los botones y añade un evento de clic
     addToCartButtons.forEach(button => {
-        button.addEventListener('click', (event) => {
-            // Encuentra el elemento padre que contiene la información del producto
-            const productCard = event.target.closest('.menu-item-card');
+        button.addEventListener('click', (e) => {
+            const menuItem = e.target.closest('.menu-item-card');
+            const itemData = {
+                id: menuItem.dataset.id,
+                name: menuItem.dataset.name,
+                price: parseFloat(menuItem.dataset.price),
+                image: menuItem.dataset.image,
+                quantity: 1
+            };
 
-            // Extrae los datos del producto de los atributos 'data' del HTML
-            const productId = productCard.dataset.id;
-            const productName = productCard.dataset.name;
-            const productPrice = parseFloat(productCard.dataset.price);
-            const productImage = productCard.dataset.image;
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const existingItemIndex = cart.findIndex(item => item.id === itemData.id);
 
-            // Busca si el producto ya existe en el carrito
-            const existingItem = cart.find(item => item.id === productId);
-
-            if (existingItem) {
-                // Si existe, incrementa su cantidad
-                existingItem.quantity++;
+            if (existingItemIndex > -1) {
+                cart[existingItemIndex].quantity += 1;
             } else {
-                // Si no existe, añade un nuevo producto al carrito
-                cart.push({
-                    id: productId,
-                    name: productName,
-                    price: productPrice,
-                    image: productImage, // Se guarda la imagen para mostrarla en el carrito
-                    quantity: 1
-                });
+                cart.push(itemData);
             }
 
-            // Guarda el carrito actualizado en localStorage
             localStorage.setItem('cart', JSON.stringify(cart));
-            
-            // Actualiza el total visible en el header
-            updateCartTotal();
-
-            // Muestra una notificación al usuario
-            alert(`${productName} ha sido añadido al carrito. Cantidad: ${existingItem ? existingItem.quantity : 1}`);
+            updateCartTotalDisplay(cart);
+            alert(`${itemData.name} ha sido agregado al carrito.`);
         });
     });
 });
